@@ -1,13 +1,13 @@
 # Data
-./data/clean
-./data/filtered
-./data/raw
+/data/clean
+/data/filtered
+/data/raw
 
 # Output
-./output
+/output
 
 # References
-./references
+/references
 
 # History files
 .Rhistory
