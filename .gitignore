@@ -1,3 +1,14 @@
+# Data
+./data/clean
+./data/filtered
+./data/raw
+
+# Output
+./output
+
+# References
+./references
+
 # History files
 .Rhistory
 .Rapp.history
