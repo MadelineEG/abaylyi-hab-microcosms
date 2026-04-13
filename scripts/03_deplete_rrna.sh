@@ -16,5 +16,5 @@ DISCARD_NAME=${i/_1.fq.gz/_rrna};
 sortmerna --ref $RNA_DB --reads $CLEAN \
         --workdir $WORK_DIR \
         --fastx --aligned $OUT_DIR/$DISCARD_NAME  --other $OUT_DIR/$SAMPLE_NAME \
-        --threads 8
+        --threads $SLURM_CPUS_PER_TASK
 done
