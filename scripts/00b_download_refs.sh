@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ueo pipefail
 
+mkdir -p ./references/sequences
+
 OUT_DIR=./references/sequences
 
 cd $OUT_DIR
