@@ -27,7 +27,6 @@ salmon index -t $REFS_PATH/ma-ab-asm_prefixed_ref.fa -i $RAW_COUNTS/ma-ab-asm_in
 # -l A: auto-determine library type
 # -r: merged/paired-end data
 # -p: request threads based on slurm cpus per task
-
 FILTERED_DIR=./data/filtered
 for i in $(cat ./data/clean_metadata.tsv | cut -f5 | tail -n +2); 
 do CLEAN_FILTERED=${FILTERED_DIR}/${i/_1.fq.gz/_clean_filtered.fq.gz};
@@ -39,3 +38,48 @@ do CLEAN_FILTERED=${FILTERED_DIR}/${i/_1.fq.gz/_clean_filtered.fq.gz};
 
 done
 
+# generate summary tsv quantifying total counts for ma, ab, and assembly (asm) at each timepoint/condition 
+OUTPUT_TSV=./output/counts/salmon_counts_metadata.tsv
+TEMP_TSV="temp_data.tsv" # Temporary file to hold the rows before sorting
+
+# 1. Clear the temp file just in case it already exists from a previous run
+> "$TEMP_TSV"
+
+# 2. Loop through every quant.sf file inside the transcript directories
+for quant_file in $RAW_COUNTS/*_transcripts/quant.sf; do
+    
+    # Safety check to ensure the file exists
+    if [[ -f "$quant_file" ]]; then
+        
+        # Extract just the base sample name (e.g., V350357263_L03_1)
+        dir_name=$(dirname "$quant_file")
+        sample_name=$(basename "$dir_name" | sed 's/_transcripts//')
+
+        # 3. Fetch metadata from your TSV
+        target_fwd="${sample_name}_1.fq.gz"
+        meta_info=$(awk -v target="$target_fwd" -F'\t' '$5 == target {print $2 "\t" $3 "\t" $4}' "./data/clean_metadata.tsv")
+        
+        # Fill with NA if not found
+        if [[ -z "$meta_info" ]]; then
+            meta_info="NA\tNA\tNA"
+        fi
+
+        # 4. Use awk to sum the reads and append everything to the TEMP file
+        awk -v sample="$sample_name" -v meta="$meta_info" '
+            BEGIN { ma=0; ab=0; asm=0 }
+            $1 ~ /^Ma_/ { ma += $5 }
+            $1 ~ /^Ab_/ { ab += $5 }
+            $1 ~ /^Asm_/ { asm += $5 }
+            END { printf "%s\t%s\t%.0f\t%.0f\t%.0f\n", sample, meta, ma, ab, asm }
+        ' "$quant_file" >> "$TEMP_TSV"
+    fi
+done
+
+# 5. Create the final TSV with the header row
+printf "Sample\tTimepoint\tTreatment\tReplicate\tMa_counts\tAb_counts\tAsm_counts\n" > "$OUTPUT_TSV"
+
+# 6. Sort the temp data logically (-V) and append it to the final TSV
+sort -V "$TEMP_TSV" >> "$OUTPUT_TSV"
+
+# 7. Clean up by removing the temporary file
+rm "$TEMP_TSV"
