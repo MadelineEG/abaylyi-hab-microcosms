@@ -5,7 +5,7 @@ txi_Ab <- readRDS("./output/counts/formatted/txi_Ab.rds")
 txi_Ma <- readRDS("./output/counts/formatted/txi_Ma.rds")
 
 # read existing metadata table as meta
-meta <- read.table("./clean_metadata.tsv", header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+meta <- read.table("./data/clean_metadata.tsv", header = TRUE, sep = "\t", stringsAsFactors = FALSE)
 
 # create combined condition-timept col in meta for easy reference w/ DESeq (contains all replicates for given grp)
 meta$group <- factor(paste0(meta$timepoint, "_", meta$treatment))
