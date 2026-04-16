@@ -13,3 +13,19 @@
 # download raw fastqs from SRA 
 
 # (write code once upload to SRA)
+
+# summarize total read numbers
+OUTTSV=./data/raw-reads_summary.tsv
+METADATA=./data/clean_metadata.tsv
+echo "sample_number,timepoint,treatment,replicate,fwd,rev,fwd_reads,rev_reads,total_reads" > "$OUTTSV"
+
+tail -n +2 "$METADATA" | while IFS=$'\t' read -r sample_number timepoint treatment replicate fwd rev; do 
+FWD=./data/raw/${fwd}; 
+REV=${FWD/_1.fq.gz/_2.fq.gz};
+FWD_READS=$(zcat $FWD | wc -l | awk '{print $1/4}');
+REV_READS=$(zcat $REV | wc -l | awk '{print $1/4}');
+TOTAL=$(($FWD_READS + $REV_READS))
+
+echo "${sample_number},${timepoint},${treatment},${replicate},${fwd},${rev},${FWD_READS},${REV_READS},${TOTAL}" >> "$OUTTSV"
+
+done
