@@ -4,8 +4,8 @@ mkdir -p {data,output,references,scripts}
 
 mkdir -p ./data/{clean,filtered,raw}
 
-mkdir -p ./outputs/{assemblies,counts,de-genes,taxonomy}
+mkdir -p ./output/{assemblies,counts,de-genes,taxonomy}
 
-mkdir -p ./outputs/counts/{formatted,raw}
+mkdir -p ./output/counts/{formatted,raw}
 
 mkdir -p ./references/{databases,id-conversion,sequences}
