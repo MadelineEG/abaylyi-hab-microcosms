@@ -5,7 +5,6 @@ REFS_PATH=./references/sequences
 ASSEMBLY_FILTERED=./output/assemblies/assembly_no-ma-ab.fasta
 
 # add header IDs to refs for downstream identification
-# prefixed outputs all into ma-ab_refs folder (need to fix file org)
 sed 's/^>/>Ab_/' $REFS_PATH/a-baylyi_cds.fna > $REFS_PATH/a-baylyi_cds_prefixed.fa
 sed 's/^>/>Ma_/' $REFS_PATH/m-aeruginosa_cds.fna > $REFS_PATH/m-aeruginosa_cds_prefixed.fa
 sed 's/^>/>Asm_/' $ASSEMBLY_FILTERED > $REFS_PATH/asm_no-ma-ab_prefixed.fa
