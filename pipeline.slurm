@@ -80,5 +80,11 @@ Rscript ./scripts/07_format_input.R
 # step 8: get M. aeruginosa, A. baylyi differential expression across conditions of interest via DESeq2
 Rscript ./scripts/08_get_de-genes.R
 
+# step 9: get DE gene lists with associated proteins
+cd output/de-genes
+Rscript ./scripts/09_get_proteins.R
+
+cd ../..
+
 # exit env
 conda deactivate
