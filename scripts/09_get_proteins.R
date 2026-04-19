@@ -1,4 +1,3 @@
-  GNU nano 5.6.1                                   get_proteins_deseq.R                                             
 # function to obtain mapping vector w/ locus-tag and protein from cds file
 map_locus_to_protein <- function(ref_path) {
         lines <- readLines(ref_path, warn = FALSE)
