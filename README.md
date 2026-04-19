@@ -2,7 +2,7 @@
 **Madeline Eibner-Gebhardt, 2026**  
 *William & Mary iGEM 2025*
 
-Pipeline to obtain differential gene expression (DE) data and taxonomic profiles for RNA sequencing data from nonsterile lakewater microcosms and control cultures inoculated with *Acinetobacter baylyi* ADP1 and *Microcystis aeruginosa* LE3.
+Pipeline to obtain differential gene expression (DE) data and taxonomic profiles for metatranscriptomic data from nonsterile lakewater microcosms and control cultures inoculated with chassis bacterium *Acinetobacter baylyi* ADP1-ISx and bloom-causing cyanobacterium *Microcystis aeruginosa* LE3.
 
 <img src="microcosms.png" width="400">
 
@@ -65,7 +65,8 @@ All relevant software tools and their dependencies are included in the Conda env
     ├── 05_quantify_counts.sh
     ├── 06_create_tx2gene_ref.sh
     ├── 07_format_input.R
-    └── 08_get_de-genes.R
+    ├── 08_get_de-genes.R
+    └── 09_get_proteins.R
 ```
 
 ## Setup
