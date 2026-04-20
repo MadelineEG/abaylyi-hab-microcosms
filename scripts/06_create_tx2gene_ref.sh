@@ -4,7 +4,7 @@ set -ueo pipefail
 # (Created with Gemini for regular expressions)
 
 # Define your input FASTA files
-AB_FASTA=./references/seqeunces/a-baylyi_cds_prefixed.fa
+AB_FASTA=./references/sequences/a-baylyi_cds_prefixed.fa
 MA_FASTA=./references/sequences/m-aeruginosa_cds_prefixed.fa
 
 # Output file paths
