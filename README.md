@@ -98,6 +98,17 @@ After completing the setup steps above, run the below command from the project d
 sbatch pipeline.slurm
 ```
 
+## Overview
+01) Clean raw data with **fastp**
+02) Generate taxonomic profile with **Kraken2** vs. **kraken_core_nt** database
+03) Deplete rRNA with **SortMeRNA** vs. **smr_v4.3_default_db** database
+04) Assemble **SPAdes** ref transcriptome of reads *not* matching *A. baylyi* or *M. aeruginosa*
+05) Quantify counts via competitive **Salmon** alignment to above assembly and *A. baylyi*, *M. aeruginosa* refs
+06) Create transcript name to locus tag (tx2gene) refs
+07) Format counts with **Tximport** and tx2gene refs
+08) Obtain DE gene lists with **DESeq2**
+09) Associate DE locus tags with protein names
+
 ## Outputs
 **Kraken taxonomic profile** reports containing read counts at all taxonomic levels can be found in the **./output/taxonomy** directory. Reports may be visualized and summarized with the **Pavian** web tool.
 
