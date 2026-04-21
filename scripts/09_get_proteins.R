@@ -74,3 +74,4 @@ for (species_name in names(species_config)) {
 
         locus_protein_map <- map_locus_to_protein(ref)
         add_proteins(locus_protein_map, pat)
+}

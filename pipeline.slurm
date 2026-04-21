@@ -82,7 +82,7 @@ Rscript ./scripts/08_get_de-genes.R
 
 # step 9: get DE gene lists with associated proteins
 cd output/de-genes
-Rscript ./scripts/09_get_proteins.R
+Rscript ../../scripts/09_get_proteins.R
 
 cd ../..
 
