@@ -102,7 +102,7 @@ sbatch pipeline.slurm
 01) Clean raw data with **fastp**
 02) Generate taxonomic profile with **Kraken2** vs. **kraken_core_nt** database
 03) Deplete rRNA with **SortMeRNA** vs. **smr_v4.3_default_db** database
-04) Assemble **SPAdes** ref transcriptome of reads *not* matching *A. baylyi* or *M. aeruginosa*
+04) Assemble **SPAdes** ref transcriptome of reads *not* matching *A. baylyi* or *M. aeruginosa* (via alignment, filtereing with **Samtools** and **Minimap2**)
 05) Quantify counts via competitive **Salmon** alignment to above assembly and *A. baylyi*, *M. aeruginosa* refs
 06) Create transcript name to locus tag (tx2gene) refs
 07) Format counts with **Tximport** and tx2gene refs
