@@ -117,3 +117,25 @@ sbatch pipeline.slurm
 <img src="sample-de.png" width="800">
 
 ## References
+
+Chen S. fastp 1.0: An ultra-fast all-round tool for FASTQ data quality control and preprocessing. iMeta 4.5 2025 https://doi.org/10.1002/imt2.70078
+
+Danecek P, Bonfield JK, Liddle J, Marshall J, Ohan V, Pollard MO, Whitwham A, Keane T, McCarthy SA, Davies RM, Li H. Twelve years of SAMtools and BCFtools. GigaScience 2021 https://doi.org/10.1093/gigascience/giab008.
+
+Kopylova E, Noé L, Touzet H. SortMeRNA: Fast and accurate filtering of ribosomal RNAs in metatranscriptomic data. Bioinformatics 2012 https://doi.org/10.1093/bioinformatics/bts611.
+
+Li H. Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics 2018 https://doi.org/10.1093/bioinformatics/bty191.
+
+Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biol 2014 https://doi.org/10.1186/s13059-014-0550-8
+
+O’Leary NA, Cox E, Holmes JB, Anderson WR, Falk R, Hem V, Tsuchiya MTN, Schuler GD, Zhang X, Torcivia J, Ketter A, Breen L, Cothran J, Bajwa H, Tinne J, Meric PA, Hlavina W, Schneider VA. Exploring and retrieving sequence and metadata for species across the tree of life with NCBI Datasets. Sci Data 2024 https://doi.org/10.1038/s41597-024-03571-y. 
+
+Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. Salmon provides fast and bias-aware quantification of transcript expression. Nat Methods 2017 https://doi.org/10.1038/nmeth.4197.
+
+Prjibelski A, Antipov D, Meleshko D, Lapidus A, Korobeynikov A. Using SPAdes de novo assembler. Current Protocols in Bioinformatics 2020 https://doi.org/10.1002/cpbi.102.
+
+R Core Team. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. 2025 https://www.R-project.org.
+
+Soneson C, Love MI, Robinson MD. Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences. F1000Research 2015 https://doi.org/10.12688/f1000research.7563.2.
+
+Wood DE, Lu J, Langmead, B. Improved metagenomic analysis with Kraken 2. Genome Biol 2019 https://doi.org/10.1186/s13059-019-1891-0.
