@@ -102,7 +102,7 @@ sbatch pipeline.slurm
 01) Clean raw data with **fastp**
 02) Generate taxonomic profile with **Kraken2** vs. **kraken_core_nt** database
 03) Deplete rRNA with **SortMeRNA** vs. **smr_v4.3_default_db** database
-04) Assemble **SPAdes** ref transcriptome of reads *not* matching *A. baylyi* or *M. aeruginosa* (via alignment, filtereing with **Samtools** and **Minimap2**)
+04) Assemble **SPAdes** ref transcriptome of reads *not* matching *A. baylyi* or *M. aeruginosa* (via alignment, filtering with **Samtools** and **Minimap2**)
 05) Quantify counts via competitive **Salmon** alignment to above assembly and *A. baylyi*, *M. aeruginosa* refs
 06) Create transcript name to locus tag (tx2gene) refs
 07) Format counts with **Tximport** and tx2gene refs
@@ -112,7 +112,7 @@ sbatch pipeline.slurm
 ## Outputs
 **Kraken taxonomic profile** reports containing read counts at all taxonomic levels can be found in the **./output/taxonomy** directory. Reports may be visualized and summarized with the **Pavian** web tool.
 
-**DE gene lists** containing lists of significantly DE genes (padj<0.05) in csv format can be found in the **./output/de-genes** directory. Files with ending _Sig_Protein.csv contain the locus tag *and* the associated protein name from the gff reference file. Files are labeled accourding to the timepoint, comparison of interest, and species. See sample output below:
+**DE gene lists** containing lists of significantly DE genes (padj<0.05) in csv format can be found in the **./output/de-genes** directory. Files with ending _Sig_Protein.csv contain the locus tag *and* the associated protein name from the gff reference file. Files are labeled accourding to the timepoint, comparison of interest, and species. A positive log fold change indicates gene upregulation in microcosms with relation to the controls. See sample output below:
 
 <img src="sample-de.png" width="800">
 
