@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=download-raw
-#SBATCH --nodes=1 # how many physical machines in the cluster
-#SBATCH --ntasks=1 # how many separate 'tasks' (stick to 1)
-#SBATCH --cpus-per-task=20 # how many cores (bora max is 20)
-#SBATCH --time=02:00:00 # d-hh:mm:ss or just No. of minutes
-#SBATCH --mem=8G # how much physical memory (all by default)
-#SBATCH -o download-raw_%j.out #STDOUT to file (%j is jobID)
-#SBATCH -e download-raw_%j.err #STDERR to file (%j is jobID)
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=20
+#SBATCH --time=02:00:00
+#SBATCH --mem=8G
+#SBATCH -o download-raw_%j.out
+#SBATCH -e download-raw_%j.err
 
-# download raw fastqs from SRA 
+# download raw fastqs from SRA
 
 # (write code once upload to SRA)
 

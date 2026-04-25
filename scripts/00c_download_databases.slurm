@@ -1,14 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=DOWNLOAD_DBS
-#SBATCH --nodes=1 # how many physical machines in the cluster
-#SBATCH --ntasks=1 # how many separate 'tasks' (stick to 1)
-#SBATCH --cpus-per-task=1 # how many cores (bora max is 20)
-#SBATCH --time=24:00:00 # d-hh:mm:ss or just No. of minutes
-#SBATCH --mem=4G # how much physical memory (all by default)
-#SBATCH -o DOWNLOAD_DBS_%j.out #STDOUT to file (%j is jobID)
-#SBATCH -e DOWNLOAD_DBS_%j.err #STDERR to file (%j is jobID)
-
-# Note: Run this in the abaylyi-hab-microcosms dir containing references/databases
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=24:00:00
+#SBATCH --mem=4G
+#SBATCH -o DOWNLOAD_DBS_%j.out
+#SBATCH -e DOWNLOAD_DBS_%j.err
 
 set -ueo pipefail
 
