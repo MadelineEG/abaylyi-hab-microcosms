@@ -5,8 +5,6 @@
 #SBATCH --cpus-per-task=20 # how many cores (bora max is 20)
 #SBATCH --time=02:00:00 # d-hh:mm:ss or just No. of minutes
 #SBATCH --mem=8G # how much physical memory (all by default)
-#SBATCH --mail-type=FAIL,BEGIN,END # when to email you
-#SBATCH --mail-user=mweibnergebhar@wm.edu # who to email
 #SBATCH -o download-raw_%j.out #STDOUT to file (%j is jobID)
 #SBATCH -e download-raw_%j.err #STDERR to file (%j is jobID)
 

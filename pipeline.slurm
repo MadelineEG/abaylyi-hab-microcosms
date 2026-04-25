@@ -5,8 +5,6 @@
 #SBATCH --cpus-per-task=20
 #SBATCH --time=3-00:00:00
 #SBATCH --mem=500G
-#SBATCH --mail-type=FAIL,BEGIN,END
-#SBATCH --mail-user=mweibnergebhar@wm.edu
 #SBATCH -o abaylyi-rnaseq_%j.out
 #SBATCH -e abaylyi-rnaseq_%j.err
 
