@@ -1,9 +1,7 @@
 #!/bin/bash
 set -ueo pipefail
 
-# (Created with Gemini for regular expressions)
-
-# Define your input FASTA files
+# Input ref cds files
 AB_FASTA=./references/sequences/a-baylyi_cds_prefixed.fa
 MA_FASTA=./references/sequences/m-aeruginosa_cds_prefixed.fa
 
