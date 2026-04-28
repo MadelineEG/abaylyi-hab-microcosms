@@ -2,6 +2,8 @@
 **Madeline Eibner-Gebhardt, 2026**  
 *William & Mary iGEM 2025*
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19856700.svg)](https://doi.org/10.5281/zenodo.19856700)
+
 Pipeline to obtain differential gene expression (DE) data and taxonomic profiles for metatranscriptomic data from nonsterile lakewater microcosms and control cultures inoculated with chassis bacterium *Acinetobacter baylyi* ADP1-ISx and bloom-causing cyanobacterium *Microcystis aeruginosa* LE3.
 
 <img src="microcosms.png" width="400">
